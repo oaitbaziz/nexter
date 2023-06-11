@@ -28,6 +28,7 @@ $max-width: 14rem;
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 1rem = 10px (10 * 100 / 16)
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -40,39 +41,9 @@ body {
 .container {
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
-  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(
-      6rem,
-      1fr
-    ) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(
-      6rem,
-      1fr
-    ) [full-end];
-}
-
-%heading {
-  font-family: $font-display;
-  font-weight: 400;
-}
-
-.heading-1 {
-  @extend %heading;
-}
-.heading-2 {
-  @extend %heading;
-}
-.heading-3 {
-  @extend %heading;
-}
-
-.heading-4 {
-  @extend %heading;
-  font-size: 1.9rem;
-
-  &--light {
-    color: #f9f7f6;
-  }
-
-  --dark {
-    color: #54483a;
-  }
+  grid-template-columns:
+    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(6rem, 1fr)
+    [full-end];
 }
