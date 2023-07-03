@@ -8,7 +8,7 @@
   justify-items: center;
   align-content: center;
 
-  @media only screen and (max-width: $bp-medium) {
+  @include tablet-down {
     grid-column: full-start / full-end;
   }
 
@@ -19,11 +19,11 @@
     grid-row-gap: 5vh;
     align-items: center;
 
-    @media only screen and (max-width: $bp-medium) {
+    @include tablet-down {
       grid-template-columns: repeat(3, min-content max-content);
     }
 
-    @media only screen and (max-width: $bp-small) {
+    @include phone-down {
       grid-template-columns: min-content max-content;
     }
   }
