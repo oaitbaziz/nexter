@@ -1,3 +1,16 @@
+/* @mixin for-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 599px) { @content; }
+  } @else if $size == tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+  } @else if $size == tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+  } @else if $size == desktop-up {
+    @media (min-width: 1200px) { @content; }
+  } @else if $size == big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+  }
+} */
 *,
 *::before,
 *::after {
@@ -11,7 +24,7 @@ html {
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
 }
-@media only screen and (max-width: 75em) {
+@media only screen and (max-width: 62.5em) {
   html {
     font-size: 50%;
   }
@@ -182,10 +195,6 @@ body {
 @media only screen and (max-width: 50em) {
   .header {
     grid-column: full-start/full-end;
-  }
-}
-@media only screen and (max-width: 50em) {
-  .header {
     padding: 5rem;
   }
 }
